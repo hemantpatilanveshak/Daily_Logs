@@ -12,11 +12,38 @@
     <h1>First name of Studets is :- {{first_name| truncatechars:2}}</h1>
     <h1>Right now time is :- {{dt|date:'D d M Y '}}</h1> 
 
-    <h3>
+    {% comment %} <h3>
         {% for name in names %}
         {{name}}<br>
         {% endfor %}
 
-    </h3>
+    </h3> {% endcomment %}
+
+    
+    {% for st in stu %}
+    
+    <h3>First Name Of The Student: - {{st.first_name}}<h3>
+        <h3>Last Name of The Student:- {{st.last_name}}<h3>
+            <h3>Division Of Studnet: - {{st.division}}<h3>
+                <h3>Marks Of Studnet: - {{st.marks}}<h3>
+
+    {% endfor %}
+
+    
+    <h3>First Name Of The Student is: - {{data.first_name}}<h3>
+        <h3>Last Name of The Student:- {{data.last_name}}<h3>
+            <h3>Division Of Studnet: - {{data.division}}<h3>
+                <h3>Marks Of Studnet: - {{data.marks}}<h3>         
+    
+    
+
+     
+                    
+
+                    <form method="POST" class="post-form">  
+                        {% csrf_token %}  
+                        {{ form.as_p }}  
+                        <button type="submit" class="save btn btn-default">Save</button>  
+                    </form>  
 </body>
 </html>

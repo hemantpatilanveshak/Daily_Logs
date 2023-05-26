@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
+from . models import Students
 # Create your views here.
 
 
@@ -38,5 +39,18 @@ def listOfStudents(request):
     }
 
     return render(request,'students/students.html',studentList)
+
+
+def getStudentData(request):
+    stud = Students.objects.all()
+
+    return render(request,'students/students.html',{'stu':stud} ) 
+
+
+def specificData(request , id=None):
+    if id is not None:
+        stud = Students.objects.get(id=id)
+
+    return render(request,'students/students.html',{'data':stud})
 
 

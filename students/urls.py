@@ -8,4 +8,6 @@ urlpatterns = [
     path('datetime/',views.datetimefilter),
     path('dashboard/',views.dashboardfunc),
     path('studentlist/',views.listOfStudents),
+    path('get/',views.getStudentData),
+    path('get/<int:id>',views.specificData),
 ]

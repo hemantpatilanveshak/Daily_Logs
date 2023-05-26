@@ -10,4 +10,5 @@ urlpatterns = [
     path('studentlist/',views.listOfStudents),
     path('get/',views.getStudentData),
     path('get/<int:id>',views.specificData),
+    path('post/',views.addData),
 ]

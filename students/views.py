@@ -8,14 +8,14 @@ def test_django(request):
     return HttpResponse('<h1>Shri Ganesha<h1>')
 
 def render_template1(request):
-    return render(request, 'students.html')     
+    return render(request, 'students/students.html')     
 
 def dynamic_template2(request):
     students_dict = {
         'first_name': 'Hemant',
         'last_name' : 'Patil'
     }
-    return render(request,'students.html',students_dict)
+    return render(request,'students/students.html',students_dict)
 
 def datetimefilter(request):
     dt = datetime.now()
@@ -23,5 +23,20 @@ def datetimefilter(request):
         'dt' :dt
     }
 
-    return render(request,'students.html',time_dict)
+    return render(request,'students/students.html',time_dict)
+
+
+def dashboardfunc(request):
+
+    return render(request, 'students/dashboard.html')
+
+# def subject(request)
+
+def listOfStudents(request):
+    studentList = {
+        'names':['Hemant','Raj',"Utkarsh"]
+    }
+
+    return render(request,'students/students.html',studentList)
+
 

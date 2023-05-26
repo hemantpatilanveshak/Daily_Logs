@@ -6,4 +6,6 @@ urlpatterns = [
     path('student/',views.render_template1),
     path('dynamic/',views.dynamic_template2),
     path('datetime/',views.datetimefilter),
+    path('dashboard/',views.dashboardfunc),
+    path('studentlist/',views.listOfStudents),
 ]

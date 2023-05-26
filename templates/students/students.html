@@ -10,6 +10,13 @@
     <h1>This is student tab</h1>
     <h1>First name of Studets is :- {{first_name| upper}}</h1>
     <h1>First name of Studets is :- {{first_name| truncatechars:2}}</h1>
-    <h1>Right now time is :- {{dt|date:'D d M Y '}}</h1>
+    <h1>Right now time is :- {{dt|date:'D d M Y '}}</h1> 
+
+    <h3>
+        {% for name in names %}
+        {{name}}<br>
+        {% endfor %}
+
+    </h3>
 </body>
 </html>
